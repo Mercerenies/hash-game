@@ -18,10 +18,12 @@ On the machine's turn, it will choose a single tile and turn it black, according
 5. Compute *md5(u)*, the MD5 hash of the string *u*. Take this string as a sequence of *32* individual hexadecimal digits. Let *v* be the sum of these digits. Then let *d* be *v* times *m* (mod *256*)
 6. Considering the game board in reading order (see the image below), turn the *d*th tile black.
 
-Spiral order (for counting *m*)
+**Spiral order (for counting consecutive reds)**
+
 ![spiral order](board_s.png)
 
-Reading order (for determining the machine's position)
+**Reading order (for determining the machine's position)**
+
 ![reading order](board_r.png)
 
 The file `hashgame.hs` is a Haskell program which simulates this game. Invoke `playGame saltString playMoveIO gameBoard` (for some salt string) to play the game interactively, and call `isWinnable saltString` to determine whether the game can be won for this string.
